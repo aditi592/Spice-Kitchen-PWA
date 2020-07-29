@@ -28,7 +28,7 @@
         <div class="phone-container">
             <mat-form-field class="phone-full-width" appearance="outline">
                 <mat-label>Enter your Contact No</mat-label>
-                <input matInput placeholder="phone" #input formControlName="phone">
+                <input matInput placeholder="phone" #input formControlName="phone" autocomplete="off" maxlength="10">
                 <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
                 <mat-error *ngIf="phone.invalid && phone.touched" class="has-text-danger">Check Contact Number</mat-error>
             </mat-form-field>
