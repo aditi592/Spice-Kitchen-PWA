@@ -1,0 +1,10 @@
+{
+    "development": {
+        "PORT": 3000,
+        "MONGODB_URI": "mongodb+srv://spicy:spicykitchen@spicy-kitchen.p6xzq.mongodb.net/spicykitchen?retryWrites=true&w=majority"
+    },
+    "production": {
+        "PORT": 80,
+        "MONGODB_URI": "mongodb+srv://spicy:spicykitchen@spicy-kitchen.p6xzq.mongodb.net/spicykitchen?retryWrites=true&w=majority"
+    }
+}
