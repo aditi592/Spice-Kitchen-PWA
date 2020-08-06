@@ -13,9 +13,10 @@ passport.use(
                 return done(err);
                 else if(!user)
                 return done(null, false , {message : 'Email is not registered'});
-
                 else if(!user.verifyPassword(password))
                 return done(null, false , {message : 'Password is incorrect'})
+                else
+                    return done(null,user);
             });
     })
 );

@@ -5,8 +5,7 @@ import { UserService } from '../shared/user.service';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [UserService]
+  encapsulation: ViewEncapsulation.None
 })
 export class RegisterComponent implements OnInit {
   myForm: FormGroup;

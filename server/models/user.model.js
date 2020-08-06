@@ -6,21 +6,21 @@ const jwt = require('jsonwebtoken');
 var userSchema = new mongoose.Schema({
     fullName: {
         type: String,
-        required:"Full Name Cant be empty"
+        required: "Full Name Cant be empty"
     },
     email: {
         type: String,
-        required:"Email cant be empty",
-        unique:true
+        required: "Email cant be empty",
+        unique: true
     },
-    phone:{
-        type:Number,
-        required:"cant be empty"
+    phone: {
+        type: Number,
+        required: "cant be empty"
     },
     password: {
         type: String,
-        required:"Cant be empty",
-        minlength:[7,"Need a minimum of 7 characters"]
+        required: "Cant be empty",
+        minlength: [7, "Need a minimum of 7 characters"]
     },
     saltSecret: String
 });
@@ -37,17 +37,17 @@ userSchema.pre('save', function (next) {
 });
 
 //Methods 
-userSchema.methods.verifyPassword = function(password){
-    return bcrypt.compareSync(password,this.password);
+userSchema.methods.verifyPassword = function (password) {
+    return bcrypt.compareSync(password, this.password);
 };
 
-userSchema.methods.generateJwt = function(){
+userSchema.methods.generateJwt = function () {
     //passing payload 7 secret code for encryption
-return jwt.sign({_id: this._id},
-    process.env.JWT_SECRET,{
-    expiresIn : process.env.JWT_EXP
+    return jwt.sign({ _id: this._id },
+        process.env.JWT_SECRET, {
+        expiresIn: process.env.JWT_EXP
     });
-}
+} 
 
 mongoose.model('User', userSchema);
 

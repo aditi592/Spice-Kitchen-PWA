@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="container">
-    <form [formGroup]="myForm">
+    <form [formGroup]="myForm" (ngSubmit)="submitLogin()">
         <!-- Testing the input -->
         Value: {{ myForm.value | json }}
         <br>
@@ -30,4 +30,10 @@
             <button mat-raised-button [disabled]="myForm.invalid" color="primary">Login</button>
         </div>
     </form>
+</div>
+<div class="successful" *ngIf="successful">
+    loged successfully
+</div>
+<div class="alert" *ngIf="serverErrorMsg">
+    {{serverErrorMsg}}
 </div>
