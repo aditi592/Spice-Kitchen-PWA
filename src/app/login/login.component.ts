@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { }
   serverErrorMsg: string;
   successful: string;
+
   model = {
     email: '',
     password: ''
@@ -35,8 +36,10 @@ export class LoginComponent implements OnInit {
     // const formValue = this.myForm.value;
     this.userService.login(this.myForm.value).subscribe(
       res => {
+        // tslint:disable-next-line: no-string-literal
         this.userService.setToken(res['token']);
-        this.router.navigateByUrl('/userprofile');
+        // const da = localStorage.getItem('token');
+        this.router.navigate(['/userprofile']);
       },
       err => {
         this.serverErrorMsg = err.error.message;

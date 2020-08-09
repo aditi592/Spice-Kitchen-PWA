@@ -44,10 +44,11 @@ userSchema.methods.verifyPassword = function (password) {
 userSchema.methods.generateJwt = function () {
     //passing payload 7 secret code for encryption
     return jwt.sign({ _id: this._id },
-        process.env.JWT_SECRET, {
-        expiresIn: process.env.JWT_EXP
-    });
-} 
+        process.env.JWT_SECRET,
+        {
+            expiresIn: process.env.JWT_EXP
+        });
+}
 
 mongoose.model('User', userSchema);
 

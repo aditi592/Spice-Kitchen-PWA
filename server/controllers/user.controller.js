@@ -40,7 +40,8 @@ module.exports.userProfile = (req, res, next) => {
         (err, user) => {
             if (!user)
                 return res.status(404).json({ status: false, message: 'User Record Not Found' });
-            else return res.status(200).json({ status: true, user: _.pick(user, ['fullName', 'email']) });
+            else
+                return res.status(200).json({ status: true, user: _.pick(user, ['fullName', 'email']) });
         }
     );
 }
