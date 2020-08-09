@@ -31,6 +31,9 @@ export class LoginComponent implements OnInit {
         Validators.nullValidator
       ]],
     });
+    if (this.userService.isLoggedIn()) {
+      this.router.navigateByUrl('/userprofile');
+    }
   }
   submitLogin() {
     // const formValue = this.myForm.value;
@@ -38,8 +41,7 @@ export class LoginComponent implements OnInit {
       res => {
         // tslint:disable-next-line: no-string-literal
         this.userService.setToken(res['token']);
-        // const da = localStorage.getItem('token');
-        this.router.navigate(['/userprofile']);
+        this.router.navigateByUrl('/userprofile');
       },
       err => {
         this.serverErrorMsg = err.error.message;

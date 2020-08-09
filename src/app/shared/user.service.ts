@@ -26,16 +26,20 @@ export class UserService {
   getUserProfile() {
     return this.http.get(environment.appBaseUrl + '/userProfile');
   }
+
+  // helper menthods
   setToken(token: string) {
     localStorage.setItem('token', token);
   }
+
   getToken() {
-    // return localStorage.getItem('token');
-    return JSON.parse(localStorage.getItem('token'));
+   return localStorage.getItem('token');
   }
+
   deleteToken() {
     localStorage.removeItem('token');
   }
+
   getUserPayLoad() {
     const token = this.getToken();
     if (token) {
@@ -50,6 +54,9 @@ export class UserService {
     const userPayload = this.getUserPayLoad();
     if (userPayload) {
       return userPayload.exp > Date.now() / 1000;
+    }
+    else {
+      return false;
     }
   }
 }
