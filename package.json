@@ -29,6 +29,7 @@
     "primeng": "^9.1.3",
     "rxjs": "~6.5.4",
     "tslib": "^2.0.0",
+    "zomato.js": "^1.1.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

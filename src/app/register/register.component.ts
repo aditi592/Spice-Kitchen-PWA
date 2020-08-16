@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../shared/user.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,7 +13,7 @@ export class RegisterComponent implements OnInit {
   hide = true;
   successful: boolean;
   serverErrorMsg: string;
-  constructor(private fb: FormBuilder, private userService: UserService) { }
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { }
 
   ngOnInit() {
     this.myForm = this.fb.group({
@@ -43,8 +44,8 @@ export class RegisterComponent implements OnInit {
       res => {
         this.successful = true;
         setTimeout(() => this.successful = false, 4000);
-        window.location.reload();
         this.serverErrorMsg = '';
+        this.router.navigateByUrl('/login');
       },
       err => {
         if (err.status === 422) {
