@@ -13,7 +13,7 @@ export class GetDataService {
       headers: new HttpHeaders({
         'user-key': 'b7d95c68cfcc7d24039463a616614c14'
       }),
-      params: params.append('res_id', '34383'),
+      params: params.append('res_id', '19042798'),
     };
     return this.http.get(this.restaurantUrl, headers);
   }
