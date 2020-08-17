@@ -1,3 +1,7 @@
 <app-header></app-header>
-<h1>{{restDetails.name}}</h1>
-{{restDetails.average_cost_for_two}}
+<div *ngIf="restDetails">
+    <h1>{{restDetails.name}}</h1>
+    {{restDetails.average_cost_for_two}}
+   
+        <p>{{restDetails.cuisines}}</p>
+</div>

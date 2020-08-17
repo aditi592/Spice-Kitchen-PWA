@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getdata.getRestaurantDetails().subscribe((res) => {
       this.restDetails = res;
-      console.log(res);
+      console.log('Parashar Kitchen', res);
     });
   }
 }
