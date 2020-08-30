@@ -5,7 +5,7 @@
 
     <p>{{restDetails.cuisines}}</p>
 </div>
-<h1>Best Sellers</h1>
+<h1>Are you hunry?? Checkout our menu below...</h1>
 <!-- <div *ngFor="let items of foods">
     <mat-card class="best-seller">
         <mat-card-header>
@@ -29,31 +29,75 @@
         </mat-card-actions>
     </mat-card>
 </div> -->
-
-<mat-grid-list cols="4" rowHeight="550px">
-    <div *ngFor="let items of foods">
-        <mat-grid-tile colspan="1">
-            <mat-card class="best-seller">
-                <mat-card-header>
-                    <mat-card-title>{{items.name_of_dish}}</mat-card-title>
-                </mat-card-header>
-                <img mat-card-image src="{{items.img}}" alt="Photo of a Food">
-                <mat-card-content>
-                    <p>
-                        {{items.desc_of_dish}}
-                    </p>
-                </mat-card-content>
-                <mat-card-content>
-                    <p>
-                        Price: ₹{{items.price}}<br>
-                        {{items.items_in_menu}}
-                    </p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <button mat-button>LIKE</button>
-                    <button mat-button>Add To Cart</button>
-                </mat-card-actions>
-            </mat-card>
-        </mat-grid-tile>
-    </div>
-</mat-grid-list>
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Our Best Sellers
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-grid-list cols="4" rowHeight="550px">
+            <div *ngFor="let items of foods">
+                <mat-grid-tile colspan="1">
+                    <mat-card class="best-seller">
+                        <mat-card-header>
+                            <mat-card-title>{{items.name_of_dish}}</mat-card-title>
+                        </mat-card-header>
+                        <img mat-card-image src="{{items.img}}" alt="Photo of a Food">
+                        <mat-card-content>
+                            <p>
+                                {{items.desc_of_dish}}
+                            </p>
+                        </mat-card-content>
+                        <mat-card-content>
+                            <p>
+                                Price: ₹{{items.price}}<br>
+                                {{items.items_in_menu}}
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-button>LIKE</button>
+                            <button mat-button>Add To Cart</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </mat-grid-tile>
+            </div>
+        </mat-grid-list>
+    </mat-expansion-panel>
+</mat-accordion>
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              Breakfast
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-grid-list cols="4" rowHeight="550px">
+            <div *ngFor="let items of breakfast">
+                <mat-grid-tile colspan="1">
+                    <mat-card class="best-seller">
+                        <mat-card-header>
+                            <mat-card-title>{{items.name_of_dish}}</mat-card-title>
+                        </mat-card-header>
+                        <img mat-card-image src="{{items.img}}" alt="Photo of a Food" width="270px" height="200px">
+                        <mat-card-content>
+                            <p>
+                                {{items.desc_of_dish}}
+                            </p>
+                        </mat-card-content>
+                        <mat-card-content>
+                            <p>
+                                Price: ₹{{items.price}}<br>
+                                {{items.items_in_menu}}
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-button>LIKE</button>
+                            <button mat-button>Add To Cart</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </mat-grid-tile>
+            </div>
+        </mat-grid-list>
+    </mat-expansion-panel>
+</mat-accordion>
