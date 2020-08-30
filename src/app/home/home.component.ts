@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from '../get-data.service';
+import {BestSeller} from '../best-seller';
 
 @Component({
   selector: 'app-home',
@@ -16,4 +17,15 @@ export class HomeComponent implements OnInit {
       console.log('Parashar Kitchen', res);
     });
   }
+  foods=[
+    new BestSeller(1,"https://b.zmtcdn.com/data/dish_photos/396/2dbeec12a33b1d0fd94bb71ed3575396.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A","Egg Burji",80,"Spicy scrambled eggs made with sautéed chopped onions, tomatoes, green chilies and optional spices","2 Eggs"),
+    new BestSeller(2,"https://b.zmtcdn.com/data/dish_photos/396/2dbeec12a33b1d0fd94bb71ed3575396.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A","Egg Burji",80,"Spicy scrambled eggs made with sautéed chopped onions, tomatoes, green chilies and optional spices","2 Eggs"),
+    new BestSeller(3,"https://b.zmtcdn.com/data/dish_photos/396/2dbeec12a33b1d0fd94bb71ed3575396.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A","Egg Burji",80,"Spicy scrambled eggs made with sautéed chopped onions, tomatoes, green chilies and optional spices","2 Eggs"),
+    new BestSeller(4,"https://b.zmtcdn.com/data/dish_photos/396/2dbeec12a33b1d0fd94bb71ed3575396.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A","Egg Burji",80,"Spicy scrambled eggs made with sautéed chopped onions, tomatoes, green chilies and optional spices","2 Eggs"),
+    // new BestSeller(5,"https://b.zmtcdn.com/data/dish_photos/396/2dbeec12a33b1d0fd94bb71ed3575396.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A","Egg Burji",80,"Spicy scrambled eggs made with sautéed chopped onions, tomatoes, green chilies and optional spices","2 Eggs"),
+    // new BestSeller(6,"https://b.zmtcdn.com/data/dish_photos/396/2dbeec12a33b1d0fd94bb71ed3575396.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A","Egg Burji",80,"Spicy scrambled eggs made with sautéed chopped onions, tomatoes, green chilies and optional spices","2 Eggs"),
+    // new BestSeller(7,"https://b.zmtcdn.com/data/dish_photos/396/2dbeec12a33b1d0fd94bb71ed3575396.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A","Egg Burji",80,"Spicy scrambled eggs made with sautéed chopped onions, tomatoes, green chilies and optional spices","2 Eggs"),
+    // new BestSeller(8,"https://b.zmtcdn.com/data/dish_photos/396/2dbeec12a33b1d0fd94bb71ed3575396.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A","Egg Burji",80,"Spicy scrambled eggs made with sautéed chopped onions, tomatoes, green chilies and optional spices","2 Eggs")
+  
+  ];
 }

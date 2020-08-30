@@ -17,6 +17,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 // extras
@@ -40,6 +42,8 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     MatIconModule,
     MatInputModule,
     MatButtonModule,
+    MatCardModule,
+    MatGridListModule,
     HttpClientModule
   ],
   providers: [{
