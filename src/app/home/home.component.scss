@@ -1,9 +1,92 @@
-h1,h3 {
+h1 {
   text-align: center;
+  font-family: "El Messiri", sans-serif;
+  font-size: 45px;
+  color: #000;
+}
+h3 {
+  text-align: center;
+  font-family: "El Messiri", sans-serif;
+  font-size: 30px;
+  color: #000;
+
+
 }
 .best-seller {
   max-width: 250px;
 }
 .mat-form-field + .mat-form-field {
-    margin-left: 8px;
-  }
+  margin-left: 8px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+#parallax h1 {
+  font-family: "El Messiri", sans-serif;
+  font-size: 45px;
+  text-transform: uppercase;
+  color: black;
+  padding: 0;
+  margin: 0;
+}
+#parallax p {
+  font-family: tahoma;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
+.first-character {
+  font-weight: 400;
+  float: left;
+  font-size: 80px;
+  line-height: 64px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+  font-family: "El Messiri", sans-serif;
+}
+.sc {
+  color: #3b8595;
+}
+#parallax .title {
+  background: white;
+  padding: 60px;
+  margin: 0 auto;
+  text-align: center;
+}
+#parallax .title h1 {
+  font-size: 35px;
+  letter-spacing: 8px;
+}
+#parallax .block {
+  background: white;
+  padding: 60px;
+  width: 1024px;
+  margin: 0 auto;
+  text-align: justify;
+}
+#parallax .parallax-one {
+  padding-top: 200px;
+  padding-bottom: 250px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background-image: url(../../assets/images/khanna.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+.block{
+  font-size: 355px;
+}
+.aboutplace{
+  flex-direction: row;
+  text-align-last: center;
+}
+.card-deck{
+  align-content: center;
+  text-align: center;
+  padding-bottom: 25px;
+}

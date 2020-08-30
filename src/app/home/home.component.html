@@ -1,34 +1,31 @@
 <app-header></app-header>
-<div *ngIf="restDetails">
-    <h1>{{restDetails.name}}</h1>
-    {{restDetails.average_cost_for_two}}
 
-    <p>{{restDetails.cuisines}}</p>
+<div id="parallax">
+    <section>
+        <div class="title">
+            <h1>Spicy Kitchen</h1>
+        </div>
+    </section>
+    <section>
+        <div class="parallax-one">
+        </div>
+    </section>
+    <section>
+        <div class="block">
+            <p>
+                <span class="first-character sc">W</span>
+                elcome to Spicy Kitchen. We provide the best "Ghar ka khanna".
+            </p>
+            <p *ngIf="restDetails">e are located at: {{restDetails.location.address}}</p>
+        </div>
+    </section>
+    <section>
+        <h1>Cuisines We Provide...</h1>
+        <p style="text-align: center; font-size: 25px;color: black; padding-top: 7px;" *ngIf="restDetails">
+            {{restDetails.cuisines}}</p>
+    </section>
 </div>
-<h1>Are you hunry?? Checkout our menu below...</h1>
-<!-- <div *ngFor="let items of foods">
-    <mat-card class="best-seller">
-        <mat-card-header>
-            <mat-card-title>{{items.name_of_dish}}</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="{{items.img}}" alt="Photo of a Food">
-        <mat-card-content>
-            <p>
-                {{items.desc_of_dish}}
-            </p>
-        </mat-card-content>
-        <mat-card-content>
-            <p>
-                Price: ₹{{items.price}}<br>
-                {{items.items_in_menu}}
-            </p>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>Add To Cart</button>
-        </mat-card-actions>
-    </mat-card>
-</div> -->
+<h1 style="margin-top:30px;">Are you hunry?? Checkout our menu below...</h1>
 <mat-accordion>
     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
@@ -69,7 +66,7 @@
     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
             <mat-panel-title>
-              Breakfast
+                Breakfast
             </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-grid-list cols="4" rowHeight="550px">
