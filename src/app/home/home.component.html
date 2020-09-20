@@ -62,14 +62,178 @@
         </a>
     </div>
 </div>
-<section id="head1" style="height: 350px;">
-    <h1>Cuisines We Provide ...</h1>
-    <p style="text-align: center; font-size: 25px;color: black; padding-top: 7px;" *ngIf="restDetails">
-        {{restDetails.cuisines}} & many more</p>
-        <h1 style="margin-top:30px;">Are you hunry ?? Checkout our menu below...</h1>
-</section>
+<div>
+    <div class="container" id="information">
+        <div class="row">
+            <div class="col-sm">
+                <div class="booking">
+                    <h3>
+                        make a booking
+                    </h3>
 
-<mat-accordion>
+                    <div class="widget_wrap" style="width:auto;height:auto;"><a
+                            href="https://www.zomato.com/ncr/parashar-kitchen-1-sector-53-gurgaon/order?utm_medium=o2_widget&utm_campaign=widget-business&utm_source=referral-widget-19042798"
+                            target="_blank"><img width="240" height="60"
+                                src="https://b.zmtcdn.com/images/developers/o2_badge_g.png" alt="Zomato"></a>
+                    </div>
+                    <div id="res_widget" class="widget_wrap" style="width:315px;height:320px;">
+                        <div
+                            style="z-index:2;display:block;margin:0px;padding:0px;box-sizing:border-box;text-align:center; position:relative; font-size: 12px;">
+                            <a href="https://www.zomato.com/ncr/parashar-kitchen-1-sector-53-gurgaon?utm_source=referral-widget-19042798&utm_medium=restaurant_information_badge&utm_campaign=widget-business"
+                                target="_newtab"
+                                style="text-decoration: none;color : #252525; font-size:12px; font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; background: url(https://b.zmtcdn.com/images/widgets/zlogo_20.png) #fff left center no-repeat; display:block; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px; text-align:left; line-height: 20px; padding:0 8px 0 28px; position:absolute; top:20px; left:10px;"
+                                id="zomatoRestaurantWidget_btn">Find us on Zomato</a></div><iframe id="res_widget_frame"
+                            src="https://www.zomato.com/widgets/restaurant_widget_reviews_frame.php?show_menu=1&show_reviews=0&res_id=19042798&height=615&language_id=1"
+                            style="display:block;width:100%;height:100%;" border="0" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="time">
+                    <h3>
+                        Opening Time
+                    </h3>
+                    <div>
+                        <p>
+                            Monday - Sunday <br> 8:00 AM - 03:00 AM
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="contact">
+                    <h3>
+                        contact
+                    </h3>
+
+                    <div>
+                        <p>
+                            <a href="mailto:parasharpratiksha70@gmail.com">EMAIL</a><br>
+                        </p>
+                        <p>
+                            +91 7763974588<br>
+                            +91 9717550974
+                        </p>
+                        <p>
+                            Plot 458, Part 1, Saraswati Kunj, <br>Golf Course Road, Sector 53, Gurgaon
+                        </p>
+                        <p>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14033.611366830553!2d77.1007204!3d28.4372704!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc12930e16ea44555!2sParashar%20kitchen!5e0!3m2!1sen!2sin!4v1600586727790!5m2!1sen!2sin"
+                                width="250" height="250" frameborder="0" style="border:0;" allowfullscreen=""
+                                aria-hidden="false" tabindex="0"></iframe>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="extra">
+            <p>
+                NOW TAKING LIMITED BOOKINGS FOR WEEKEND BRUNCH... ALTHOUGH YOU ARE STILL WELCOME TO WALK-IN AS
+                ALWAYS.<br>
+                WE HAVE OUTDOOR SEATING WHICH WE OFFER ON A FIRST COME, FIRST SERVED BASIS. JUST ASK ONE OF THE TEAM
+                WHEN YOU ARRIVE.
+            </p>
+        </div>
+    </div>
+</div>
+<section id="head1" style="height: 350px;">
+    <h1 style="margin-top:30px;">Are you hunry ?? Checkout our menu below...</h1>
+    <h1>Cuisines We Provide ...</h1>
+    <p style="text-align: center; font-size: 25px;color: black; padding-top:5 px;" *ngIf="restDetails">
+        {{restDetails.cuisines}} & many more</p>
+</section>
+<mat-tab-group animationDuration="2000ms" mat-align-tabs="center">
+    <mat-tab label="Our Best Sellers">
+        <mat-grid-list cols="4" rowHeight="550px">
+            <div *ngFor="let items of foods">
+                <mat-grid-tile colspan="1">
+                    <mat-card class="best-seller">
+                        <mat-card-header>
+                            <mat-card-title>{{items.name_of_dish}}</mat-card-title>
+                        </mat-card-header>
+                        <img mat-card-image src="{{items.img}}" alt="Photo of a Food">
+                        <mat-card-content>
+                            <p>
+                                {{items.desc_of_dish}}
+                            </p>
+                        </mat-card-content>
+                        <mat-card-content>
+                            <p>
+                                Price: ₹{{items.price}}<br>
+                                {{items.items_in_menu}}
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-button>LIKE</button>
+                            <button mat-button>Add To Cart</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </mat-grid-tile>
+            </div>
+        </mat-grid-list>
+
+    </mat-tab>
+    <mat-tab label="Breakfast">
+        <mat-grid-list cols="4" rowHeight="550px">
+            <div *ngFor="let items of breakfast">
+                <mat-grid-tile colspan="1">
+                    <mat-card class="best-seller">
+                        <mat-card-header>
+                            <mat-card-title>{{items.name_of_dish}}</mat-card-title>
+                        </mat-card-header>
+                        <img mat-card-image src="{{items.img}}" alt="Photo of a Food" width="270px" height="200px">
+                        <mat-card-content>
+                            <p>
+                                {{items.desc_of_dish}}
+                            </p>
+                        </mat-card-content>
+                        <mat-card-content>
+                            <p>
+                                Price: ₹{{items.price}}<br>
+                                {{items.items_in_menu}}
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-button>LIKE</button>
+                            <button mat-button>Add To Cart</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </mat-grid-tile>
+            </div>
+        </mat-grid-list>
+    </mat-tab>
+    <mat-tab label="Main Course">
+        <mat-grid-list cols="4" rowHeight="550px">
+            <div *ngFor="let items of maincourse">
+                <mat-grid-tile colspan="1">
+                    <mat-card class="best-seller">
+                        <mat-card-header>
+                            <mat-card-title>{{items.name_of_dish}}</mat-card-title>
+                        </mat-card-header>
+                        <img mat-card-image src="{{items.img}}" alt="Photo of a Food" width="270px" height="200px">
+                        <mat-card-content>
+                            <p>
+                                {{items.desc_of_dish}}
+                            </p>
+                        </mat-card-content>
+                        <mat-card-content>
+                            <p>
+                                Price: ₹{{items.price}}<br>
+                                {{items.items_in_menu}}
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-button>LIKE</button>
+                            <button mat-button>Add To Cart</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </mat-grid-tile>
+            </div>
+        </mat-grid-list>
+    </mat-tab>
+</mat-tab-group>
+<!-- <mat-accordion>
     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
             <mat-panel-title>
@@ -140,4 +304,4 @@
             </div>
         </mat-grid-list>
     </mat-expansion-panel>
-</mat-accordion>
+</mat-accordion> -->

@@ -20,6 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
 
 // extras
 import { AuthGuard } from './auth/auth.guard';
@@ -45,6 +46,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     MatCardModule,
     MatGridListModule,
     MatExpansionModule,
+    MatTabsModule,
     HttpClientModule
   ],
   providers: [{
