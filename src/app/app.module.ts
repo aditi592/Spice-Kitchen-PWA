@@ -25,6 +25,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 // extras
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     MatGridListModule,
     MatExpansionModule,
     MatTabsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
