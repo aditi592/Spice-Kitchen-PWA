@@ -27,7 +27,9 @@ h3 {
 }
 .about-us p {
   text-align: center;
-  padding-top: 75px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 80px;
   padding-bottom: 75px;
   font-family: "El Messiri", sans-serif;
   text-transform: uppercase;
@@ -125,6 +127,9 @@ h3 {
   color: #000;
   padding-bottom: -10px;
 }
+.container #info-text p {
+  font-family: "Courier Prime", monospace;
+}
 #information h3 {
   text-align: center;
   font-family: "El Messiri", sans-serif;
@@ -142,12 +147,20 @@ h3 {
 
 #information .row .booking,
 .time,
-.contact ,div,
+.contact,
+div,
 p {
   text-align: justify;
   padding-top: 10px;
 }
-#information #extra{
+#information .time {
+  font-family: "Courier Prime", monospace;
+  line-height: 50px;
+}
+#information .contact {
+  font-family: "Courier Prime", monospace;
+}
+#information #extra {
   padding-top: 15px;
   text-align: center;
   font-family: "El Messiri", sans-serif;
@@ -155,6 +168,6 @@ p {
   text-transform: uppercase;
   font-size: 17px;
 }
-mat-panel-title{
+mat-panel-title {
   text-transform: uppercase;
 }
