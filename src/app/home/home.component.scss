@@ -171,3 +171,10 @@ p {
 mat-panel-title {
   text-transform: uppercase;
 }
+.fabbutton {
+  float: right;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 999;
+}
