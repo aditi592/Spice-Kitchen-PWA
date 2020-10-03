@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       ]],
     });
     if (this.userService.isLoggedIn()) {
-      this.router.navigateByUrl('/userprofile');
+      this.router.navigateByUrl('/home');
     }
   }
   submitLogin() {
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       res => {
         // tslint:disable-next-line: no-string-literal
         this.userService.setToken(res['token']);
-        this.router.navigateByUrl('/userprofile');
+        this.router.navigateByUrl('/home');
       },
       err => {
         this.serverErrorMsg = err.error.message;
