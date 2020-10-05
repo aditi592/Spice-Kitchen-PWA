@@ -1,8 +1,7 @@
 .container {
-    margin-top: 50px;
+  
     text-align: center;
-    border: solid darkblue 1px;
-    border-radius: 50px;
+  
 }
 .name-full-width {
     padding-bottom: 15px;
@@ -20,3 +19,22 @@
     padding-top: 15px;
     width: 65%;
 }
+
+#info img {
+    // padding-left: 25px;
+    // padding-top: 25px;
+    width: 500px;
+    height:600px;
+  }
+  #info p {
+    text-align: center;
+    padding-top: 150px;
+    padding-left: 180px;
+  }
+  
+ 
+  .container #info-text p {
+    font-family: "Courier Prime", monospace;
+    padding-top: 10%;
+  }
+
