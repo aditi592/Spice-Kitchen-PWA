@@ -1,9 +1,16 @@
 <app-header></app-header>
-<div class="container">
+<body>
+<section >
+    <div class="container" id="info">
+        <div class="row">
+            <div class="col-sm">
+                <img src="../../assets/images/log2.webp">
+            </div>
+            
+<div class="col-sm" id="info-text">
+    <h1>Login </h1>
     <form [formGroup]="myForm" (ngSubmit)="submitLogin()">
-        <!-- Testing the input -->
-        Value: {{ myForm.value | json }}
-        <br>
+       
 
         <div class="email-container">
             <mat-form-field class="email-full-width" appearance="outline">
@@ -31,10 +38,16 @@
         </div>
         
     </form>
-</div>
+
 <div class="successful" *ngIf="successful">
     loged successfully
 </div>
 <div class="alert" *ngIf="serverErrorMsg">
     {{serverErrorMsg}}
 </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>

@@ -1,10 +1,10 @@
 export class BestSeller {
     constructor(
-        public id: number,
-        public type:string,
+        public id: string,
+        public type: string,
         public img: string,
-        public name_of_dish: string,
+        public nameofdish: string,
         public price: number,
-        public desc_of_dish: string,
-        public items_in_menu: string) { }
+        public descofdish: string,
+        public itemsinmenu: string) { }
 }
