@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HomeComponent } from './home/home.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'userprofile', component: UserProfileComponent, canActivate: [AuthGuard] },
   { path: 'home', component: HomeComponent },
+  { path: 'contact', component: ContactComponent },
   { path: '**', component: NotfoundComponent }
 ];
 
@@ -22,4 +24,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomeComponent, LoginComponent, RegisterComponent, UserProfileComponent, NotfoundComponent];
+export const routingComponents = [HomeComponent, LoginComponent, RegisterComponent, UserProfileComponent, ContactComponent,NotfoundComponent];

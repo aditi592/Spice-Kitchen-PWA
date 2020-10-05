@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       ]],
     });
     if (this.userService.isLoggedIn()) {
-      this.router.navigateByUrl('/userprofile');
+      this.router.navigateByUrl('/home');
     }
   }
   submitLogin() {
