@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../shared/user.service';
 import { Router } from '@angular/router';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -16,6 +17,8 @@ export class RegisterComponent implements OnInit {
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { }
 
   ngOnInit() {
+    $('#home').remove();
+    $('#logout').remove();
     this.myForm = this.fb.group({
       fullName: ['', [
         Validators.required,

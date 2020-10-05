@@ -202,11 +202,8 @@
                             </p>
                         </mat-card-content>
                         <mat-card-actions>
-<<<<<<< HEAD
                             <button mat-button (click)="confirm1(items)">{{buttonLike}}</button>
-=======
-                            <button mat-button>LIKE</button>
->>>>>>> 5107a9c0ef1feaa54947b7d106ceca8b98ab192f
+
                             <!-- <button mat-button>Add To Cart</button> -->
                         </mat-card-actions>
                     </mat-card>
@@ -235,11 +232,8 @@
                             </p>
                         </mat-card-content>
                         <mat-card-actions>
-<<<<<<< HEAD
                             <button mat-button (click)="confirm1(items)">{{buttonLike}}</button>
-=======
-                            <button mat-button>LIKE</button>
->>>>>>> 5107a9c0ef1feaa54947b7d106ceca8b98ab192f
+
                             <!-- <button mat-button>Add To Cart</button> -->
                         </mat-card-actions>
                     </mat-card>
@@ -248,97 +242,15 @@
         </mat-grid-list>
     </mat-tab>
 </mat-tab-group>
-<<<<<<< HEAD
-<div class="fabbutton">
-    <button @fade (click)="ShowItems()" mat-fab>
-        <mat-icon>favorite</mat-icon>
-    </button>
-</div>
-=======
+
 <div @fade class="fabbutton">
     <button mat-fab (click)="ShowItems()">
         <mat-icon>favorite</mat-icon>
     </button>
 </div>
 
->>>>>>> 5107a9c0ef1feaa54947b7d106ceca8b98ab192f
 <div @fade class="foods" id="showMe">
     <div @fade *ngFor="let hero of foodArrFinal"> {{ hero }}
     </div>
 </div>
-<<<<<<< HEAD
-=======
-<!-- <mat-accordion>
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                Our Best Sellers
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-grid-list cols="4" rowHeight="550px">
-            <div *ngFor="let items of foods">
-                <mat-grid-tile colspan="1">
-                    <mat-card class="best-seller">
-                        <mat-card-header>
-                            <mat-card-title>{{items.name_of_dish}}</mat-card-title>
-                        </mat-card-header>
-                        <img mat-card-image src="{{items.img}}" alt="Photo of a Food">
-                        <mat-card-content>
-                            <p>
-                                {{items.desc_of_dish}}
-                            </p>
-                        </mat-card-content>
-                        <mat-card-content>
-                            <p>
-                                Price: ₹{{items.price}}<br>
-                                {{items.items_in_menu}}
-                            </p>
-                        </mat-card-content>
-                        <mat-card-actions>
-                            <button mat-button>LIKE</button>
-                            <button mat-button>Add To Cart</button>
-                        </mat-card-actions>
-                    </mat-card>
-                </mat-grid-tile>
-            </div>
-        </mat-grid-list>
-    </mat-expansion-panel>
-</mat-accordion>
-<mat-accordion>
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                Breakfast
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-grid-list cols="4" rowHeight="550px">
-            <div *ngFor="let items of breakfast">
-                <mat-grid-tile colspan="1">
-                    <mat-card class="best-seller">
-                        <mat-card-header>
-                            <mat-card-title>{{items.name_of_dish}}</mat-card-title>
-                        </mat-card-header>
-                        <img mat-card-image src="{{items.img}}" alt="Photo of a Food" width="270px" height="200px">
-                        <mat-card-content>
-                            <p>
-                                {{items.desc_of_dish}}
-                            </p>
-                        </mat-card-content>
-                        <mat-card-content>
-                            <p>
-                                Price: ₹{{items.price}}<br>
-                                {{items.items_in_menu}}
-                            </p>
-                        </mat-card-content>
-                        <mat-card-actions>
-                            <button mat-button>LIKE</button>
-                            <button mat-button>Add To Cart</button>
-                        </mat-card-actions>
-                    </mat-card>
-                </mat-grid-tile>
-            </div>
-        </mat-grid-list>
-    </mat-expansion-panel>
-</mat-accordion> -->
->>>>>>> 5107a9c0ef1feaa54947b7d106ceca8b98ab192f
 <app-footer></app-footer>

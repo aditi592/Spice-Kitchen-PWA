@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../shared/user.service';
 import { Router } from '@angular/router';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,7 +10,6 @@ import { Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
-
   myForm: FormGroup;
   hide = true;
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { }
@@ -21,6 +21,9 @@ export class LoginComponent implements OnInit {
     password: ''
   };
   ngOnInit() {
+    $('#home').remove();
+    $('#logout').remove();
+
     this.myForm = this.fb.group({
       email: ['', [
         Validators.required,

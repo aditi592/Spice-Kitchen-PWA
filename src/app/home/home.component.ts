@@ -2,6 +2,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { GetDataService } from '../get-data.service';
 import { BestSeller } from '../best-seller';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { UserService } from '../shared/user.service';
+import { Router } from '@angular/router';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +27,7 @@ export class HomeComponent implements OnInit {
   selected = String;
   foodArr = [];
   foodArrFinal = [];
-  constructor(private getdata: GetDataService) { }
+  constructor(private getdata: GetDataService, private userService: UserService, private router: Router) { }
 
   foods = [
     new BestSeller('f1', 'Non-Veg', 'https://b.zmtcdn.com/data/dish_photos/396/2dbeec12a33b1d0fd94bb71ed3575396.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A', 'Egg Burji', 80, 'Spicy scrambled eggs made with sautéed chopped onions, tomatoes, green chilies and optional spices', '2 Eggs'),
@@ -65,6 +68,8 @@ export class HomeComponent implements OnInit {
     this.getdata.getRestaurantDetails().subscribe((res) => {
       this.restDetails = res;
       console.log('Parashar Kitchen', res);
+      $('#login').remove();
+      $('#register').remove();
     });
   }
 }
