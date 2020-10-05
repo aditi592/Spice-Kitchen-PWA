@@ -36,12 +36,11 @@ export class LoginComponent implements OnInit {
     }
   }
   submitLogin() {
-    // const formValue = this.myForm.value;
     this.userService.login(this.myForm.value).subscribe(
       res => {
         // tslint:disable-next-line: no-string-literal
         this.userService.setToken(res['token']);
-        this.router.navigateByUrl('/userprofile');
+        this.router.navigateByUrl('/home');
       },
       err => {
         this.serverErrorMsg = err.error.message;

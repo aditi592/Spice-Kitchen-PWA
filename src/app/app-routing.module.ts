@@ -10,11 +10,11 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'userprofile', component: UserProfileComponent, canActivate: [AuthGuard] },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'contact', component: ContactComponent },
   { path: '**', component: NotfoundComponent }
 ];
@@ -24,4 +24,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomeComponent, LoginComponent, RegisterComponent, UserProfileComponent, ContactComponent,NotfoundComponent];
+// tslint:disable-next-line: max-line-length
+export const routingComponents = [HomeComponent, LoginComponent, RegisterComponent, UserProfileComponent, ContactComponent, NotfoundComponent];
