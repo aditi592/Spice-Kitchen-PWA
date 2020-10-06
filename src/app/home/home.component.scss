@@ -202,3 +202,21 @@ mat-panel-title {
   right: 25px;
   z-index: 998;
 }
+ #heart:hover{
+   cursor: pointer;
+   font-size: 22px;
+  color: red;
+}
+// #heart {
+//   color: #aab8c2;
+//   font-size: 2em;
+//   cursor: pointer;
+// }
+
+// #toggle-heart:checked + fa-icon {
+//   color: #e2264d;
+// }
+// #heart {
+//   position: absolute;
+//   left: -100vw;
+// }

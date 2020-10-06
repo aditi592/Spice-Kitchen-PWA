@@ -172,8 +172,9 @@
                             </p>
                         </mat-card-content>
                         <mat-card-actions>
-                            <button mat-button (click)="confirm1(items)">{{buttonLike}}</button>
-                            <!-- <button mat-button>Add To Cart</button> -->
+                            <fa-icon [icon]="faHeart" (click)="confirm1(items)" id="heart"></fa-icon>
+                            <!-- <button mat-button (click)="confirm1(items)">{{buttonLike}}</button> -->
+                            <button mat-button>Add To Cart</button>
                         </mat-card-actions>
                     </mat-card>
                 </mat-grid-tile>
@@ -250,7 +251,10 @@
 </div>
 
 <div @fade class="foods" id="showMe">
-    <div @fade *ngFor="let hero of foodArrFinal"> {{ hero }}
+    <div @fade *ngFor="let items of foodArrFinal">
+        <span>
+            <fa-icon [icon]="faMinus" (click)="remove(items)" id="minus"></fa-icon>
+        </span> {{ items }}
     </div>
 </div>
 <app-footer></app-footer>
