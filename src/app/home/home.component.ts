@@ -55,7 +55,6 @@ export class HomeComponent implements OnInit {
   remove(selectedItem: any) {
     this.selectedRem = selectedItem;
     console.log('Food To Remove Selected is', this.selectedRem);
-    // this.foodArrFinal = this.foodArrFinal.splice(selectedItem, 0, 1);
     for (let i = 0; i < this.foodArrFinal.length; i++) {
       if (this.foodArrFinal[i] === selectedItem) { this.foodArrFinal.splice(i, 1); }
     }
