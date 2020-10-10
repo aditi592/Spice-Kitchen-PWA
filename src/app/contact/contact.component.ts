@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../shared/user.service';
 import * as $ from 'jquery';
 @Component({
   selector: 'app-contact',
@@ -7,10 +8,16 @@ import * as $ from 'jquery';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userServ: UserService) { }
 
   ngOnInit(): void {
-    $('#home').remove();
-    $('#header-prof').remove();
+    if (this.userServ.isLoggedIn()) {
+      $('#login').remove();
+      $('#register').remove();
+    }
+    else {
+      $('#home').remove();
+      $('#header-prof').remove();
+    }
   }
 }

@@ -43,14 +43,14 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="../../assets/images/Edited-9-Dosa-CXHGB4.jpg" alt="First slide">
+                <img class="d-block w-75" src="../../assets/images/Edited-9-Dosa-CXHGB4.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="../../assets/images/1501791674-delish-chicken-curry-horizontal.jpg"
+                <img class="d-block w-75" src="../../assets/images/1501791674-delish-chicken-curry-horizontal.jpg"
                     alt="Second slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="../../assets/images/26122881898_ca8b7e53e1_o.jpg" alt="Third slide">
+                <img class="d-block w-75" src="../../assets/images/26122881898_ca8b7e53e1_o.jpg" alt="Third slide">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -144,7 +144,7 @@
         </div>
     </div>
 </div>
-<section id="head1" style="height: 350px;">
+<section id="head1" style="height: 250px;">
     <h1 style="margin-top:30px;">Are you hungry ?? Checkout our menu below...</h1>
     <h1>Cuisines We Provide ...</h1>
     <p style="text-align: center; font-size: 25px;color: black; padding-top:5 px;" *ngIf="restDetails">
@@ -152,7 +152,7 @@
 </section>
 <mat-tab-group animationDuration="2000ms" mat-align-tabs="center">
     <mat-tab label="Our Best Sellers">
-        <mat-grid-list cols="4" rowHeight="550px">
+        <mat-grid-list cols="4" rowHeight="500px">
             <div *ngFor="let items of foods">
                 <mat-grid-tile colspan="1">
                     <mat-card class="best-seller">
@@ -183,14 +183,14 @@
 
     </mat-tab>
     <mat-tab label="Breakfast">
-        <mat-grid-list cols="4" rowHeight="550px">
+        <mat-grid-list cols="4" rowHeight="500px">
             <div *ngFor="let items of breakfast">
                 <mat-grid-tile colspan="1">
                     <mat-card class="best-seller">
                         <mat-card-header>
                             <mat-card-title>{{items.nameofdish}}</mat-card-title>
                         </mat-card-header>
-                        <img mat-card-image src="{{items.img}}" alt="Photo of a Food" width="270px" height="200px">
+                        <img mat-card-image src="{{items.img}}" alt="Photo of a Food">
                         <mat-card-content>
                             <p>
                                 {{items.descofdish}}
@@ -212,17 +212,17 @@
         </mat-grid-list>
     </mat-tab>
     <mat-tab label="Main Course">
-        <mat-grid-list cols="4" rowHeight="550px">
+        <mat-grid-list cols="4" rowHeight="500px">
             <div *ngFor="let items of maincourse">
                 <mat-grid-tile colspan="1">
                     <mat-card class="best-seller">
                         <mat-card-header>
                             <mat-card-title>{{items.nameofdish}}</mat-card-title>
                         </mat-card-header>
-                        <img mat-card-image src="{{items.img}}" alt="Photo of a Food" width="270px" height="200px">
+                        <img mat-card-image src="{{items.img}}" alt="Photo of a Food">
                         <mat-card-content>
                             <p>
-                                {{items.desc_of_dish}}
+                                {{items.descofdish}}
                             </p>
                         </mat-card-content>
                         <mat-card-content>
@@ -233,7 +233,6 @@
                         </mat-card-content>
                         <mat-card-actions>
                             <fa-icon [icon]="faHeart" (click)="confirm1(items)" id="heart"></fa-icon>
-                            <!-- <button mat-button>Add To Cart</button> -->
                         </mat-card-actions>
                     </mat-card>
                 </mat-grid-tile>
