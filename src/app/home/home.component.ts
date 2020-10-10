@@ -2,7 +2,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { GetDataService } from '../get-data.service';
 import { BestSeller } from '../best-seller';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-
+import { UserService } from '../shared/user.service';
+import { Router } from '@angular/router';
+import { faHeart, faMinus } from '@fortawesome/free-solid-svg-icons';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,13 +21,16 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   ]
 })
 export class HomeComponent implements OnInit {
+  faHeart = faHeart;
+  faMinus = faMinus;
   buttonLike = 'Like';
   panelOpenState = false;
   restDetails: any;
   selected = String;
   foodArr = [];
   foodArrFinal = [];
-  constructor(private getdata: GetDataService) { }
+  selectedRem = [];
+  constructor(private getdata: GetDataService, private userService: UserService, private router: Router) { }
   foods = [
     new BestSeller('f1', 'Non-Veg', 'https://b.zmtcdn.com/data/dish_photos/396/2dbeec12a33b1d0fd94bb71ed3575396.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A', 'Egg Burji', 80, 'Spicy scrambled eggs made with sautéed chopped onions, tomatoes, green chilies and optional spices', '2 Eggs'),
     new BestSeller('f2', 'Veg', 'https://b.zmtcdn.com/data/dish_photos/396/2dbeec12a33b1d0fd94bb71ed3575396.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A', 'Sattu Paratha', 100, 'Sattu Paratha is popular in Bihar. Sattu is full of nutrients like protein thus making this a healthy dish.', 'Sattu Paratha [2 Pieces] +Chokha +Salad'),
@@ -44,7 +50,14 @@ export class HomeComponent implements OnInit {
     new BestSeller('f12', 'Non-Veg', 'https://b.zmtcdn.com/data/dish_photos/396/2dbeec12a33b1d0fd94bb71ed3575396.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A', 'Egg Burji', 80, 'Spicy scrambled eggs made with sautéed chopped onions, tomatoes, green chilies and optional spices', '2 Eggs'),
     new BestSeller('f13', 'Non-Veg', 'https://b.zmtcdn.com/data/dish_photos/396/2dbeec12a33b1d0fd94bb71ed3575396.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A', 'Egg Burji', 80, 'Spicy scrambled eggs made with sautéed chopped onions, tomatoes, green chilies and optional spices', '2 Eggs')
   ];
-
+  remove(selectedItem: any) {
+    this.selectedRem = selectedItem;
+    console.log('Food To Remove Selected is', this.selectedRem);
+    for (let i = 0; i < this.foodArrFinal.length; i++) {
+      if (this.foodArrFinal[i] === selectedItem) { this.foodArrFinal.splice(i, 1); }
+    }
+    console.log('Khanna', this.foodArrFinal);
+  }
   confirm1(selectedItem: any) {
     this.selected = selectedItem.nameofdish;
     console.log('Food Selected', this.selected);
@@ -61,6 +74,8 @@ export class HomeComponent implements OnInit {
     }
   }
   ngOnInit() {
+    $('#login').remove();
+    $('#register').remove();
     this.getdata.getRestaurantDetails().subscribe((res) => {
       this.restDetails = res;
       console.log('Parashar Kitchen', res);

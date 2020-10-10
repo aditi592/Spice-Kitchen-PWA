@@ -26,6 +26,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     routingComponents,
     HeaderComponent,
     FooterComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

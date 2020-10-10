@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../shared/user.service';
 import { Router } from '@angular/router';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,6 +22,8 @@ export class LoginComponent implements OnInit {
     password: ''
   };
   ngOnInit() {
+    $('#header-prof').remove();
+    $('#home').remove();
     this.myForm = this.fb.group({
       email: ['', [
         Validators.required,

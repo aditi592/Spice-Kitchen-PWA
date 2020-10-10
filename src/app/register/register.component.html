@@ -1,8 +1,17 @@
 <app-header></app-header>
+
+<section>
+    <div class="container" id="info">
+        <div class="row">
+            <div class="col-sm">
+                <img src="../../assets/images/log.jpg">
+            </div>
+<div class="col-sm" id="info-text">
+                
 <div class="container">
+    <h1>Register</h1>
     <form [formGroup]="myForm" (ngSubmit)="submitRegistration()">
-        <!-- Testing the input -->
-        Value: {{ myForm.value | json }}
+       
         <br>
 
         <div class="name-container">
@@ -59,3 +68,7 @@
 <div class="alert" *ngIf="serverErrorMsg">
     {{serverErrorMsg}}
 </div>
+            </div>
+        </div>
+    </div>
+</section>

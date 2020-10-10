@@ -145,7 +145,7 @@
     </div>
 </div>
 <section id="head1" style="height: 350px;">
-    <h1 style="margin-top:30px;">Are you hunry ?? Checkout our menu below...</h1>
+    <h1 style="margin-top:30px;">Are you hungry ?? Checkout our menu below...</h1>
     <h1>Cuisines We Provide ...</h1>
     <p style="text-align: center; font-size: 25px;color: black; padding-top:5 px;" *ngIf="restDetails">
         {{restDetails.cuisines}} & many more</p>
@@ -172,8 +172,9 @@
                             </p>
                         </mat-card-content>
                         <mat-card-actions>
-                            <button mat-button (click)="confirm1(items)">{{buttonLike}}</button>
-                            <!-- <button mat-button>Add To Cart</button> -->
+                            <fa-icon [icon]="faHeart" (click)="confirm1(items)" id="heart"></fa-icon>
+                            <!-- <button mat-button (click)="confirm1(items)">{{buttonLike}}</button> -->
+                            <button mat-button>Add To Cart</button>
                         </mat-card-actions>
                     </mat-card>
                 </mat-grid-tile>
@@ -202,7 +203,7 @@
                             </p>
                         </mat-card-content>
                         <mat-card-actions>
-                            <button mat-button>LIKE</button>
+                            <fa-icon [icon]="faHeart" (click)="confirm1(items)" id="heart"></fa-icon>
                             <!-- <button mat-button>Add To Cart</button> -->
                         </mat-card-actions>
                     </mat-card>
@@ -231,7 +232,7 @@
                             </p>
                         </mat-card-content>
                         <mat-card-actions>
-                            <button mat-button>LIKE</button>
+                            <fa-icon [icon]="faHeart" (click)="confirm1(items)" id="heart"></fa-icon>
                             <!-- <button mat-button>Add To Cart</button> -->
                         </mat-card-actions>
                     </mat-card>
@@ -247,79 +248,10 @@
 </div>
 
 <div @fade class="foods" id="showMe">
-    <div @fade *ngFor="let hero of foodArrFinal"> {{ hero }}
+    <div @fade *ngFor="let items of foodArrFinal">
+        <span>
+            <fa-icon [icon]="faMinus" (click)="remove(items)" id="minus"></fa-icon>
+        </span> {{ items }}
     </div>
 </div>
-<!-- <mat-accordion>
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                Our Best Sellers
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-grid-list cols="4" rowHeight="550px">
-            <div *ngFor="let items of foods">
-                <mat-grid-tile colspan="1">
-                    <mat-card class="best-seller">
-                        <mat-card-header>
-                            <mat-card-title>{{items.name_of_dish}}</mat-card-title>
-                        </mat-card-header>
-                        <img mat-card-image src="{{items.img}}" alt="Photo of a Food">
-                        <mat-card-content>
-                            <p>
-                                {{items.desc_of_dish}}
-                            </p>
-                        </mat-card-content>
-                        <mat-card-content>
-                            <p>
-                                Price: ₹{{items.price}}<br>
-                                {{items.items_in_menu}}
-                            </p>
-                        </mat-card-content>
-                        <mat-card-actions>
-                            <button mat-button>LIKE</button>
-                            <button mat-button>Add To Cart</button>
-                        </mat-card-actions>
-                    </mat-card>
-                </mat-grid-tile>
-            </div>
-        </mat-grid-list>
-    </mat-expansion-panel>
-</mat-accordion>
-<mat-accordion>
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                Breakfast
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-grid-list cols="4" rowHeight="550px">
-            <div *ngFor="let items of breakfast">
-                <mat-grid-tile colspan="1">
-                    <mat-card class="best-seller">
-                        <mat-card-header>
-                            <mat-card-title>{{items.name_of_dish}}</mat-card-title>
-                        </mat-card-header>
-                        <img mat-card-image src="{{items.img}}" alt="Photo of a Food" width="270px" height="200px">
-                        <mat-card-content>
-                            <p>
-                                {{items.desc_of_dish}}
-                            </p>
-                        </mat-card-content>
-                        <mat-card-content>
-                            <p>
-                                Price: ₹{{items.price}}<br>
-                                {{items.items_in_menu}}
-                            </p>
-                        </mat-card-content>
-                        <mat-card-actions>
-                            <button mat-button>LIKE</button>
-                            <button mat-button>Add To Cart</button>
-                        </mat-card-actions>
-                    </mat-card>
-                </mat-grid-tile>
-            </div>
-        </mat-grid-list>
-    </mat-expansion-panel>
-</mat-accordion> -->
 <app-footer></app-footer>
